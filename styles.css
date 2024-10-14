@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#controls {
+    margin: 20px;
+}
+
+.image-container {
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+}
+
+.flip-container {
+    perspective: 1000px;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-container.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front img, .back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+#timer, #gameTime {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
